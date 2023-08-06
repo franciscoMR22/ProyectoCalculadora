@@ -1,0 +1,82 @@
+*{
+    font-family: 'Handjet', cursive;
+    font-family: 'Libre Baskerville', serif;
+    color: #FFFCF0;
+    --backG: #003B46;
+    --colorBT: #66A5AD;
+    --colorBTDegAc:#5595a0;
+    --colorBTDegTrans:#3c6a72;
+    --colorDisplay: #031e20;
+}
+
+body{
+    margin:0;
+    background-color: var(--backG);
+}
+
+.container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/*calculate button size*/
+.calculator{
+    display: grid;
+    grid-template-columns: repeat(4,75px);
+    grid-template-rows: 160px repeat(5,75px);
+    background-color: var(--colorBT);
+    padding: 15px;
+    border-radius: 31px;
+    box-shadow: 15px 10px 0px 5px #00000033; /* Axis x, Axis y, blur-radius, #color and degraded */
+}
+
+/*button editing*/
+button{
+    cursor: pointer;
+    margin: 5px;
+    padding: 0;
+    border-radius: 32px;
+    font-size: 1.5em;
+    border:none;
+    background-color: var(--colorBT) ;
+    box-shadow: 5px 5px 6px -3px #00000040, -5px -5px 10px -10px #C4DFE6; /*Indicate the shadows          */
+    transition: all .54s;                                                                          /*below and then the ones above */
+}
+
+.equal-2colum{
+    grid-column: span 2;
+}
+
+/*button action*/
+button:hover{
+    background-color:var(--colorBTDegAc);
+}
+button:active{
+    background-color:var(--colorBTDegTrans);
+    transition-duration:.47s ;
+}
+
+.display{
+    grid-column: 1/-1 ;
+    padding: 16px;
+    display:flex;
+    margin: 10px 10px 20px;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: var(--colorDisplay);
+    border-radius: 10px;
+    justify-content: space-between;
+    text-align: right;
+    word-break: break-all;
+    box-shadow: 0px 0px 0px 6px #00000033;
+}
+
+#inputValue{
+    font-size: 1.5em;
+}
+
+#outputValue{
+    font-size: 2em;
+}
